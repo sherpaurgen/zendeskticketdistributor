@@ -7,14 +7,19 @@ go build ./cmd/backapi
 copy the binary "backapi" to ~/utils/
 
 Step 1) 
+```
 mkdir ~/.triage 
 mkdir ~/utils
-
+```
 Step 2) 
 Copy 3 files  go binary backapi + zendb.sql and docker-compose.yml to ~/utils/
 
 Step 3)
-create file:-  ~/.triage/agents.json
+create file:-  
+```
+vim ~/.triage/agents.json
+```
+
 ```
 {  
   "subdomain":"mycompanysupport.zendesk.com/api/v2/",
