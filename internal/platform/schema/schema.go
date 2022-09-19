@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"log"
 	"os"
-	"ticket/cmd/zendesk"
 )
 
 type TicketList struct {
@@ -79,7 +78,7 @@ type TaComment struct {
 func GetSubdomain() string{
 	agentListFile:="/.triage/agents.json"
 	var basePath string
-	basePath = zendesk.GetUserHomeDir()
+	basePath = GetUserHomeDir()
 	agentjsonFilePath := basePath + agentListFile
 	agentdata, err := os.ReadFile(agentjsonFilePath)
 	if err != nil {
@@ -90,10 +89,17 @@ func GetSubdomain() string{
 	if err != nil {
 		log.Fatalf("Problem unmarshalling ~/.triage/agents.json file")
 	}
-	log.Println("Reading agentlist json:",agentnames.Agentlist)
 	return agentnames.Domain
 }
 type agentjson struct {
 	Agentlist []string `json:"agentlist"`
 	Domain string `json:"subdomain"`
+}
+
+func GetUserHomeDir() string {
+	userHomePath, err := os.UserHomeDir()
+	if err != nil {
+		log.Fatal("Error parsing json files in userHomedir : ", err)
+	}
+	return userHomePath
 }
