@@ -1,6 +1,7 @@
 
 
-This program will use zendesk ticket and search api to detect new tickets and equally distribute them to available agents.The UI of the api is a node/react app (see dockercompose file and source link) and uses data stored in postgres+api.
+This program will use zendesk ticket and search api to detect new tickets/Triage tickets to available agents: users with least number of open/pending ticket will be assigned with new tickets.
+The UI of the api is a node/react app (see dockercompose file and source link) and uses data stored in postgres+api.
  
 To create go executable
 go build ./cmd/backapi
