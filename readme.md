@@ -1,7 +1,11 @@
+## Zendesk Ticket Traige
 
+This program will use zendesk ticket and search api to detect new tickets/Triage tickets to available agents: users with least number of open/pending ticket will be assigned with new tickets. It is composed of :
+1. Go app (backend)
+2. Node/reactjs (frontend)
+3. Postgres (for storing records)
 
-This program will use zendesk ticket and search api to detect new tickets/Triage tickets to available agents: users with least number of open/pending ticket will be assigned with new tickets.
-The UI of the api is a node/react app (see dockercompose file and source link) and uses data stored in postgres+api.
+Source for frontend/UI [here](https://github.com/sherpaurgen/dashboard)
 
 Demo: Access the frontend at `https://127.0.0.1:3000`
 ![screenshot1](https://github.com/sherpaurgen/zendeskticketdistributor/blob/main/img/demo1.png)
